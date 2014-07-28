@@ -15,8 +15,63 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l7q-CQ-qD8">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="454"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcS-mk-q6M">
+                                <rect key="frame" x="0.0" y="462" width="320" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.85672331204379559" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Draw Path For Annotations"/>
+                                <connections>
+                                    <action selector="drawPathForAnnotations" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HvB-zj-q5Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owz-bw-8l0">
+                                <rect key="frame" x="0.0" y="500" width="320" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.8560960310218978" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Draw Polygon For Annotations">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="drawPolygonForAnnotations" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xgT-Nb-rJD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hov-iQ-gdb">
+                                <rect key="frame" x="0.0" y="538" width="320" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.85196167883211693" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Clear All">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearAll" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Je2-FI-nHg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hov-iQ-gdb" firstAttribute="top" secondItem="owz-bw-8l0" secondAttribute="bottom" constant="8" id="6W0-HC-CkN"/>
+                            <constraint firstItem="Hov-iQ-gdb" firstAttribute="trailing" secondItem="owz-bw-8l0" secondAttribute="trailing" id="7dA-48-dke"/>
+                            <constraint firstItem="tcS-mk-q6M" firstAttribute="trailing" secondItem="owz-bw-8l0" secondAttribute="trailing" id="92q-I8-k27"/>
+                            <constraint firstItem="l7q-CQ-qD8" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="AWh-0s-uil"/>
+                            <constraint firstItem="owz-bw-8l0" firstAttribute="top" secondItem="tcS-mk-q6M" secondAttribute="bottom" constant="8" id="N3n-4b-8QM"/>
+                            <constraint firstItem="l7q-CQ-qD8" firstAttribute="centerX" secondItem="tcS-mk-q6M" secondAttribute="centerX" id="NNx-0Q-zxJ"/>
+                            <constraint firstItem="l7q-CQ-qD8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="bYU-GN-f3K"/>
+                            <constraint firstAttribute="trailing" secondItem="tcS-mk-q6M" secondAttribute="trailing" id="eL0-T1-ztM"/>
+                            <constraint firstItem="tcS-mk-q6M" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="f0D-qp-SMs"/>
+                            <constraint firstItem="Hov-iQ-gdb" firstAttribute="leading" secondItem="owz-bw-8l0" secondAttribute="leading" id="fhE-tc-g3K"/>
+                            <constraint firstItem="tcS-mk-q6M" firstAttribute="top" secondItem="l7q-CQ-qD8" secondAttribute="bottom" constant="8" id="gDN-fH-4Sx"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Hov-iQ-gdb" secondAttribute="bottom" id="pGD-gQ-zca"/>
+                            <constraint firstItem="tcS-mk-q6M" firstAttribute="leading" secondItem="owz-bw-8l0" secondAttribute="leading" id="y13-qu-GDt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="l7q-CQ-qD8" id="JLW-JY-8FS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

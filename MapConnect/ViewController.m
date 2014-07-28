@@ -7,23 +7,32 @@
 //
 
 #import "ViewController.h"
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface ViewController ()
-
+@interface ViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
+// Outlet to mapView
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [super viewWillAppear:animated];
+    // Sets mapview to track current user location whenever view appears
+    [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
+    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
 }
 
-- (void)didReceiveMemoryWarning
+- (IBAction)drawPathForAnnotations
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+- (IBAction)drawPolygonForAnnotations
+{
+}
+- (IBAction)clearAll
+{
 }
 
 @end
