@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "mapViewAnnotation.h"
 
 @interface ViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 // Outlet to mapView
@@ -51,10 +52,13 @@
 }
 
 // Draws annotation at the location in mapview
-- (void)drawAnnotationAtLocation:(CGPoint)location
+- (void)drawAnnotationAtLocation:(CGPoint)point
 {
-    
-    NSLog(@"%@", NSStringFromCGPoint(location));
+    CLLocationCoordinate2D pointInMap = [self.mapView convertPoint:point toCoordinateFromView:self.mapView];
+    mapViewAnnotation *annotation = [[mapViewAnnotation alloc] initWithCoordinate:pointInMap
+                                                                            title:nil
+                                                                         subtitle:nil];
+    [self.mapView addAnnotation:annotation];
 }
 
 @end

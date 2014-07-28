@@ -21,4 +21,7 @@
 @property (nonatomic, readonly, copy) NSString *title;
 @property (nonatomic, readonly, copy) NSString *subtitle;
 
+// Override description
+- (NSString *)description;
+
 @end
