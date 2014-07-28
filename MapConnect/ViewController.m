@@ -25,6 +25,12 @@
     [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.mapView.delegate = self;
+}
+
 - (IBAction)drawPathForAnnotations
 {
 }
@@ -33,6 +39,22 @@
 }
 - (IBAction)clearAll
 {
+}
+
+// When user taps a location in mapView, an annotation is added
+// to the map
+- (IBAction)tappedLocationInMapView:(UITapGestureRecognizer *)sender
+{
+    CGPoint tappedLocation = [sender locationInView:self.mapView];
+    [self drawAnnotationAtLocation:tappedLocation];
+
+}
+
+// Draws annotation at the location in mapview
+- (void)drawAnnotationAtLocation:(CGPoint)location
+{
+    
+    NSLog(@"%@", NSStringFromCGPoint(location));
 }
 
 @end
