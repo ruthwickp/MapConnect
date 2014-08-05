@@ -8,8 +8,7 @@
 
 #import "ViewController.h"
 #import <MapKit/MapKit.h>
-#import <CoreLocation/CoreLocation.h>
-#import "mapViewAnnotation.h"
+#import "Annotation.h"
 
 @interface ViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 // Outlet to mapView
@@ -17,6 +16,7 @@
 @end
 
 @implementation ViewController
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -26,6 +26,7 @@
     [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
 }
 
+// Sets ourself to contain the mapView delegate
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -55,7 +56,7 @@
 - (void)drawAnnotationAtLocation:(CGPoint)point
 {
     CLLocationCoordinate2D pointInMap = [self.mapView convertPoint:point toCoordinateFromView:self.mapView];
-    mapViewAnnotation *annotation = [[mapViewAnnotation alloc] initWithCoordinate:pointInMap
+    Annotation *annotation = [[Annotation alloc] initWithCoordinate:pointInMap
                                                                             title:nil
                                                                          subtitle:nil];
     [self.mapView addAnnotation:annotation];

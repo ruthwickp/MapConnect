@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7D3BE9D519868C9C00D177ED /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3BE9D419868C9C00D177ED /* MapKit.framework */; };
 		7D3BE9D7198696C700D177ED /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3BE9D6198696C700D177ED /* CoreLocation.framework */; };
-		7D3BE9DA1986CA8D00D177ED /* mapViewAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3BE9D91986CA8D00D177ED /* mapViewAnnotation.m */; };
+		7D3BE9DA1986CA8D00D177ED /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3BE9D91986CA8D00D177ED /* Annotation.m */; };
 		7DB8C63E1985DFE00004C1C9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB8C63D1985DFE00004C1C9 /* Foundation.framework */; };
 		7DB8C6401985DFE00004C1C9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB8C63F1985DFE00004C1C9 /* CoreGraphics.framework */; };
 		7DB8C6421985DFE00004C1C9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB8C6411985DFE00004C1C9 /* UIKit.framework */; };
@@ -39,8 +39,8 @@
 /* Begin PBXFileReference section */
 		7D3BE9D419868C9C00D177ED /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7D3BE9D6198696C700D177ED /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		7D3BE9D81986CA8D00D177ED /* mapViewAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mapViewAnnotation.h; sourceTree = "<group>"; };
-		7D3BE9D91986CA8D00D177ED /* mapViewAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mapViewAnnotation.m; sourceTree = "<group>"; };
+		7D3BE9D81986CA8D00D177ED /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
+		7D3BE9D91986CA8D00D177ED /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
 		7DB8C63A1985DFE00004C1C9 /* MapConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB8C63D1985DFE00004C1C9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7DB8C63F1985DFE00004C1C9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -126,8 +126,8 @@
 				7DB8C64F1985DFE00004C1C9 /* Main.storyboard */,
 				7DB8C6521985DFE00004C1C9 /* ViewController.h */,
 				7DB8C6531985DFE00004C1C9 /* ViewController.m */,
-				7D3BE9D81986CA8D00D177ED /* mapViewAnnotation.h */,
-				7D3BE9D91986CA8D00D177ED /* mapViewAnnotation.m */,
+				7D3BE9D81986CA8D00D177ED /* Annotation.h */,
+				7D3BE9D91986CA8D00D177ED /* Annotation.m */,
 				7DB8C6551985DFE00004C1C9 /* Images.xcassets */,
 				7DB8C6441985DFE00004C1C9 /* Supporting Files */,
 			);
@@ -264,7 +264,7 @@
 			files = (
 				7DB8C6541985DFE00004C1C9 /* ViewController.m in Sources */,
 				7DB8C64E1985DFE00004C1C9 /* AppDelegate.m in Sources */,
-				7D3BE9DA1986CA8D00D177ED /* mapViewAnnotation.m in Sources */,
+				7D3BE9DA1986CA8D00D177ED /* Annotation.m in Sources */,
 				7DB8C64A1985DFE00004C1C9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
