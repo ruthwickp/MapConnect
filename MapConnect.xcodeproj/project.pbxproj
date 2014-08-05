@@ -17,7 +17,7 @@
 		7DB8C64A1985DFE00004C1C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB8C6491985DFE00004C1C9 /* main.m */; };
 		7DB8C64E1985DFE00004C1C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB8C64D1985DFE00004C1C9 /* AppDelegate.m */; };
 		7DB8C6511985DFE00004C1C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB8C64F1985DFE00004C1C9 /* Main.storyboard */; };
-		7DB8C6541985DFE00004C1C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB8C6531985DFE00004C1C9 /* ViewController.m */; };
+		7DB8C6541985DFE00004C1C9 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB8C6531985DFE00004C1C9 /* MapViewController.m */; };
 		7DB8C6561985DFE00004C1C9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DB8C6551985DFE00004C1C9 /* Images.xcassets */; };
 		7DB8C65D1985DFE00004C1C9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB8C65C1985DFE00004C1C9 /* XCTest.framework */; };
 		7DB8C65E1985DFE00004C1C9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB8C63D1985DFE00004C1C9 /* Foundation.framework */; };
@@ -52,8 +52,8 @@
 		7DB8C64C1985DFE00004C1C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7DB8C64D1985DFE00004C1C9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7DB8C6501985DFE00004C1C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7DB8C6521985DFE00004C1C9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7DB8C6531985DFE00004C1C9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7DB8C6521985DFE00004C1C9 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		7DB8C6531985DFE00004C1C9 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		7DB8C6551985DFE00004C1C9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7DB8C65B1985DFE00004C1C9 /* MapConnectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapConnectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB8C65C1985DFE00004C1C9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -124,8 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				7DB8C64F1985DFE00004C1C9 /* Main.storyboard */,
-				7DB8C6521985DFE00004C1C9 /* ViewController.h */,
-				7DB8C6531985DFE00004C1C9 /* ViewController.m */,
+				7DB8C6521985DFE00004C1C9 /* MapViewController.h */,
+				7DB8C6531985DFE00004C1C9 /* MapViewController.m */,
 				7D3BE9D81986CA8D00D177ED /* Annotation.h */,
 				7D3BE9D91986CA8D00D177ED /* Annotation.m */,
 				7DB8C6551985DFE00004C1C9 /* Images.xcassets */,
@@ -262,7 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DB8C6541985DFE00004C1C9 /* ViewController.m in Sources */,
+				7DB8C6541985DFE00004C1C9 /* MapViewController.m in Sources */,
 				7DB8C64E1985DFE00004C1C9 /* AppDelegate.m in Sources */,
 				7D3BE9DA1986CA8D00D177ED /* Annotation.m in Sources */,
 				7DB8C64A1985DFE00004C1C9 /* main.m in Sources */,

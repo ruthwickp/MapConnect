@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MapViewController.h
 //  MapConnect
 //
 //  Created by Ruthwick Pathireddy on 7/27/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MapViewController : UIViewController
 
 @end
