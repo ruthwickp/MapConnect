@@ -49,14 +49,74 @@
 
 #pragma mark - Button presses
 
+// Draws a MKPolyline overlay connecting annotations
 - (IBAction)drawPathForAnnotations
 {
+    // Gets a list of visible coordinates and creates a polyline overlay
+    CLLocationCoordinate2D *coordinates = nil;
+    int annotationsCount = [self getVisibleAnnotationCoordinates:&coordinates];
+    MKPolyline *polyline = [MKPolyline polylineWithCoordinates:coordinates count:annotationsCount];
+    free(coordinates);
+    [self.mapView addOverlay:polyline];
 }
+
+// Delegate method to draw overlays before being displayed
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
+{
+    // Customizes polyline overlays
+    if ([overlay isKindOfClass:[MKPolyline class]]) {
+        MKPolylineRenderer *polyLineRenderer = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
+        polyLineRenderer.strokeColor = [[UIColor blueColor] colorWithAlphaComponent:.5];
+        return polyLineRenderer;
+    }
+    // Customizes polygon overlays
+    else if ([overlay isKindOfClass:[MKPolygon class]]) {
+        MKPolygonRenderer *polygonRenderer = [[MKPolygonRenderer alloc] initWithPolygon:overlay];
+        polygonRenderer.lineWidth = .5;
+        polygonRenderer.strokeColor = [UIColor blackColor];
+        polygonRenderer.fillColor = [[UIColor redColor] colorWithAlphaComponent:.5];
+        return polygonRenderer;
+    }
+    return nil;
+}
+
+// Draw a polygon connecting the visible annotations
 - (IBAction)drawPolygonForAnnotations
 {
+    // Gets a list of visible coordinates and creates a polygon overlay
+    CLLocationCoordinate2D *coordinates = nil;
+    int annotationsCount = [self getVisibleAnnotationCoordinates:&coordinates];
+    MKPolygon *polygon = [MKPolygon polygonWithCoordinates:coordinates count:annotationsCount];
+    free(coordinates);
+    [self.mapView addOverlay:polygon];
 }
+
+// Fills coordinates array with coordinates of visible annotations
+// and returns number of elements in array
+- (int)getVisibleAnnotationCoordinates:(CLLocationCoordinate2D **)coordinates
+{
+    // Gets all annotations that are visible
+    MKMapRect rectangle = self.mapView.visibleMapRect;
+    NSSet *visibleAnnotations = [self.mapView annotationsInMapRect:rectangle];
+    
+    // Stores coordinates in array
+    *coordinates = malloc(sizeof(CLLocationCoordinate2D) * [visibleAnnotations count]);
+    int index = 0;
+    for (id obj in visibleAnnotations) {
+        if ([obj isKindOfClass:[Annotation class]]) {
+            (*coordinates)[index] = ((Annotation *)obj).coordinate;
+            index++;
+        }
+    }
+    
+    return index;
+}
+
+// Clears all overlays and annotations
 - (IBAction)clearAll
 {
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    [self.mapView removeOverlays:self.mapView.overlays];
 }
 
 #pragma mark - Map User Interface
@@ -84,20 +144,6 @@
             [self.mapView addAnnotation:annotation];
         }
     }];
-}
-
-// Only shows visible annotations
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
-{
-    NSString *identifier = @"AnnotationView";
-    // Reuses annotation views
-    MKAnnotationView *view = [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-    if (!view) {
-        view = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-        [view setCanShowCallout:YES];
-    }
-    view.annotation = annotation;
-    return view;
 }
 
 @end
